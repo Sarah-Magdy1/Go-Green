@@ -1,5 +1,6 @@
-import { Colors, Fonts } from '@/constants/theme';
+import { Colors, Fonts, gradients } from '@/constants/theme';
 import { Ionicons } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
 import { useCallback, useEffect, useState } from 'react';
 import {
@@ -9,7 +10,7 @@ import {
   Pressable,
   StyleSheet,
   Text,
-  View,
+  View
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import MainHeader from '../../../components/common/MainHeader';
@@ -150,7 +151,10 @@ export default function ActivityLogScreen() {
               </View>
 
               <View style={styles.headerContent}>
-                <View style={styles.banner}>
+                <LinearGradient
+                  colors={gradients.banner}
+                  style={styles.banner}
+                >
                   <Text style={styles.bannerTitle}>{t('scan.towelActivityLog')}</Text>
                   <View style={styles.bannerStatsRow}>
                     <View style={styles.bannerStat}>
@@ -163,7 +167,7 @@ export default function ActivityLogScreen() {
                       <Text style={styles.bannerStatValue}>{totalTowelsOut}</Text>
                     </View>
                   </View>
-                </View>
+                </LinearGradient>
 
                 {!!error && <Text style={styles.errorText}>{error}</Text>}
 
@@ -271,8 +275,8 @@ export default function ActivityLogScreen() {
 }
 
 const styles = StyleSheet.create({
-  safeArea: { flex: 1, backgroundColor: '#ffffff' },
-  container: { flex: 1, backgroundColor: '#ffffff' },
+  safeArea: { flex: 1, backgroundColor: Colors.white },
+  container: { flex: 1, backgroundColor: Colors.white },
 
   headerWrapper: {
     position: 'relative',
@@ -285,15 +289,15 @@ const styles = StyleSheet.create({
     top: 170,
     left: 20,
     zIndex: 10,
-    backgroundColor: Colors.navy,
+    backgroundColor: Colors.button,
     borderRadius: 24,
     paddingHorizontal: 18,
     paddingVertical: 12,
   },
-  backButtonText: { fontFamily: Fonts.body, fontSize: 13, color: '#ffffff' },
+  backButtonText: { fontFamily: Fonts.body, fontSize: 13, color: Colors.textPrimary },
 
   banner: {
-    backgroundColor: Colors.gold,
+    backgroundColor: Colors.blue,
     marginHorizontal: 20,
     marginTop: 29,
     borderRadius: 14,
@@ -305,7 +309,7 @@ const styles = StyleSheet.create({
     fontFamily: Fonts.heading,
     fontSize: 18,
     fontWeight: '700',
-    color: '#ffffff',
+    color: Colors.textPrimary,
     marginBottom: 14,
   },
   bannerStatsRow: {
@@ -317,14 +321,14 @@ const styles = StyleSheet.create({
   bannerStatLabel: {
     fontFamily: Fonts.body,
     fontSize: 11,
-    color: 'rgba(255,255,255,0.85)',
+    color: Colors.textPrimary,
     marginBottom: 4,
   },
   bannerStatValue: {
     fontFamily: Fonts.heading,
     fontSize: 22,
     fontWeight: '700',
-    color: '#ffffff',
+    color: Colors.textPrimary,
   },
   bannerDivider: {
     width: 1,
@@ -335,7 +339,7 @@ const styles = StyleSheet.create({
   errorText: {
     fontFamily: Fonts.body,
     fontSize: 13,
-    color: '#c0392b',
+    color: Colors.error,
     textAlign: 'center',
     marginTop: 12,
     marginHorizontal: 20,
@@ -366,7 +370,7 @@ const styles = StyleSheet.create({
     gap: 6,
   },
   actionBarSideButton: { paddingHorizontal: 4 },
-  actionBarText: { color: '#ffffff', fontFamily: Fonts.body, fontSize: 12 },
+  actionBarText: { color: Colors.white, fontFamily: Fonts.body, fontSize: 12 },
   actionBarCenterText: { fontWeight: '600' },
   actionBarTextDisabled: { opacity: 0.4 },
 
@@ -391,7 +395,7 @@ const styles = StyleSheet.create({
   },
   confirmCard: {
     width: '100%',
-    backgroundColor: '#ffffff',
+    backgroundColor: Colors.white,
     borderRadius: 14,
     padding: 20,
   },
@@ -422,5 +426,5 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 9,
   },
-  confirmConfirmText: { fontFamily: Fonts.body, fontSize: 13, color: '#ffffff', fontWeight: '600' },
+  confirmConfirmText: { fontFamily: Fonts.body, fontSize: 13, color: Colors.white, fontWeight: '600' },
 });

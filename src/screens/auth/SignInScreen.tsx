@@ -24,6 +24,7 @@ import {
   FINAL_LOGO_SIZE,
 } from '../../constants/waveHeaderConfig';
 
+import { Colors } from '@/constants/theme';
 import { useSignIn } from '../../hooks/auth/useSignIn';
 import { useKeyboardVisible } from '../../hooks/common/useKeyboardVisible';
 import { useTranslation } from '../../i18n/LanguageContext';
@@ -105,7 +106,7 @@ export default function SignInScreen() {
       >
         <View style={{ opacity: logoKeyboardOpacity }}>
           <Animated.Image
-            source={require('../../../assets/images/logo.png')}
+            source={require('../../../assets/images/logo-ability.png')}
             style={styles.logo}
             resizeMode="contain"
           />
@@ -116,7 +117,7 @@ export default function SignInScreen() {
         style={styles.langToggle}
         onPress={() => setLanguage(language === 'ar' ? 'en' : 'ar')}
       >
-        <Ionicons name="globe-outline" size={24} color="#c9a25a" />
+        <Ionicons name="globe-outline" size={24} color={Colors.white} />
       </Pressable>
 
       <KeyboardAvoidingView
@@ -176,7 +177,7 @@ export default function SignInScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
+    backgroundColor: Colors.white,
   },
   logoContainer: {
     position: 'absolute',

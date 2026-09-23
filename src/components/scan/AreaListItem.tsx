@@ -1,4 +1,4 @@
-import { Fonts } from '@/constants/theme';
+import { Colors, Fonts } from '@/constants/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { StyleSheet, Text, View } from 'react-native';
 import { AllowedArea } from '../../types/scan.types';
@@ -13,7 +13,7 @@ export default function AreaListItem({ area, subtitle }: AreaListItemProps) {
   return (
     <View style={styles.card}>
       <View style={styles.iconWrap}>
-        <Ionicons name={getAreaIcon(area.type)} size={18} color="#c9a25a" />
+        <Ionicons name={getAreaIcon(area.type)} size={18} color={Colors.textPrimary} />
       </View>
       <View style={styles.textWrap}>
         <Text style={styles.name}>{area.name}</Text>
@@ -51,5 +51,5 @@ const styles = StyleSheet.create({
   textWrap: { flex: 1 , },
   name: { fontSize: 13, color: '#1a1a1a', fontFamily: Fonts.body  },
   subtitle: { fontSize: 11, color: '#9a9a9a', marginTop: 2 },
-  dot: { width: 5, height: 5, borderRadius: 3, backgroundColor: '#c9a25a' },
+  dot: { width: 5, height: 5, borderRadius: 3, backgroundColor: Colors.textPrimary },
 });

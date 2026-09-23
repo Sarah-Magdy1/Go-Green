@@ -111,7 +111,7 @@ export default function ScanHomeScreen() {
 
       setResult(response);
 
-      router.push('/(app)/scan-result');
+      router.push('/(App)/scan-result');
     } catch (err) {
       console.log('[ScanHomeScreen] handleScan error:', err);
       if (axios.isAxiosError(err)) {
@@ -158,7 +158,7 @@ export default function ScanHomeScreen() {
 
       setResult(response);
 
-      router.push('/(app)/scan-result');
+      router.push('/(App)/scan-result');
     } catch (err) {
       if (axios.isAxiosError(err)) {
         console.log('Status:', err.response?.status);
@@ -297,7 +297,7 @@ const styles = StyleSheet.create({
     top: 170,
     left: 20,
     zIndex: 10,
-    backgroundColor: Colors.gold,
+    backgroundColor: Colors.button,
     paddingHorizontal: 14,
     paddingVertical: 6,
     borderRadius: 20,
@@ -306,7 +306,7 @@ const styles = StyleSheet.create({
   activityLogText: {
     fontFamily: Fonts.body,
     fontSize: 12,
-    color: Colors.white,
+    color: Colors.textPrimary,
   },
 
   content: {
@@ -321,7 +321,7 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: Fonts.heading,
     fontSize: 32,
-    color: Colors.gold,
+    color: Colors.textPrimary,
     letterSpacing: 2,
     marginTop: 150,
     textAlign: 'center',
@@ -335,7 +335,7 @@ const styles = StyleSheet.create({
   titleUnderline: {
     width: 220,
     height: 1.2,
-    backgroundColor: Colors.border,
+    backgroundColor: Colors.textPrimary,
     marginTop: 12,
     marginBottom: 25,
   },
@@ -381,7 +381,7 @@ const styles = StyleSheet.create({
     fontFamily: Fonts.headingMedium,
     fontSize: 20,
     letterSpacing: 1,
-    color: '#131E30',
+    color: Colors.textPrimary,
     marginTop: 18,
   },
 

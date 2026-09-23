@@ -53,14 +53,14 @@ export default function MainHeader() {
         />
         <View style={styles.actions}>
           <Pressable onPress={handleLogout} style={styles.iconBtn} hitSlop={8}>
-            <Ionicons name="log-out-outline" size={22} color="#c9a25a" />
+            <Ionicons name="log-out-outline" size={22} color="#FFFFFF" />
           </Pressable>
           <Pressable
             onPress={() => setLanguage(language === 'ar' ? 'en' : 'ar')}
             style={styles.iconBtn}
             hitSlop={8}
           >
-            <Ionicons name="globe-outline" size={22} color="#c9a25a" />
+            <Ionicons name="globe-outline" size={22} color="#FFFFFF" />
           </Pressable>
         </View>
       </View>
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     zIndex: 10,
     elevation: 10,
   },
-  logo: { width: 34, height: 34, zIndex: 11, elevation: 11 },
+  logo: { width: 34, height: 34, zIndex: 11, elevation: 11, paddingTop: 4 },
   actions: { flexDirection: 'row', gap: 14, zIndex: 11, elevation: 11 },
   iconBtn: { padding: 4 },
 });

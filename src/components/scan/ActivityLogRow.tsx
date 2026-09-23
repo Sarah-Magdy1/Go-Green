@@ -75,9 +75,9 @@ export default function ActivityLogRow({
       <View style={styles.deleteBackground}>
         <Pressable onPress={handleDelete} style={styles.deleteButton} disabled={deleting}>
           {deleting ? (
-            <ActivityIndicator size="small" color="#c0392b" />
+            <ActivityIndicator size="small" color={Colors.error} />
           ) : (
-            <Ionicons name="trash" size={24} color="#c0392b" />
+            <Ionicons name="trash" size={24} color={Colors.error} />
           )}
         </Pressable>
       </View>
@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
     borderRadius: 12,
     borderWidth: 1.5,
-    borderColor: Colors.gold,
+    borderColor: Colors.blue,
     paddingVertical: 14,
     paddingHorizontal: 16,
   },
@@ -151,11 +151,11 @@ const styles = StyleSheet.create({
   label: {
     fontFamily: Fonts.body,
     fontSize: 10,
-    color: '#9a9a9a',
+    color: Colors.textPrimary,
     marginBottom: 4,
     textTransform: 'capitalize',
   },
-  roomId: { fontFamily: Fonts.heading, fontSize: 16, fontWeight: '700', color: Colors.gold },
+  roomId: { fontFamily: Fonts.heading, fontSize: 16, fontWeight: '700', color: Colors.blue },
   guestName: { fontFamily: Fonts.body, fontSize: 13, color: Colors.navy },
   countBadge: {
     width: 26,

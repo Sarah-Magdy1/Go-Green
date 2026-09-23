@@ -138,12 +138,17 @@ export default function TowelDetailsScreen() {
               </View>
 
               <LinearGradient
-                colors={activeTab === 'OUT' ? ['#cba15c', '#8a6a2f'] : ['#1c2b4a', '#0f1930']}
+                colors={activeTab === 'OUT' ? ['#E9F2FD' , "#E9F2FD"] : ['#1c2b4a', '#0f1930']}
                 start={{ x: 0, y: 0 }}
                 end={{ x: 1, y: 1 }}
                 style={styles.counterBox}
               >
-                <Text style={styles.counterBoxTitle}>
+                <Text
+                  style={[
+                    styles.counterBoxTitle,
+                    activeTab === 'IN' && { color: Colors.white },
+                  ]}
+                >
                   {activeTab === 'OUT' ? t('scan.towelsTaken') : t('scan.towelsReturned')}
                 </Text>
 
@@ -152,7 +157,14 @@ export default function TowelDetailsScreen() {
                     <Ionicons name="remove" size={18} color={Colors.navy} />
                   </Pressable>
 
-                  <Text style={styles.counterValue}>{quantity}</Text>
+                  <Text
+                    style={[
+                      styles.counterValue,
+                      activeTab === 'IN' && { color: Colors.white },
+                    ]}
+                  >
+                    {quantity}
+                  </Text>
 
                   <Pressable
                     style={styles.counterButton}
@@ -163,7 +175,12 @@ export default function TowelDetailsScreen() {
                   </Pressable>
                 </View>
 
-                <Text style={styles.outOfText}>
+                <Text
+                  style={[
+                    styles.outOfText,
+                    activeTab === 'IN' && { color: Colors.white },
+                  ]}
+                >
                   {maxForTab} {t('scan.outOfAllowed')}
                 </Text>
               </LinearGradient>
@@ -216,12 +233,12 @@ export default function TowelDetailsScreen() {
 }
 
 const styles = StyleSheet.create({
-  screen: { flex: 1, backgroundColor: '#ffffff' },
-  container: { flex: 1, backgroundColor: '#ffffff' },
+  screen: { flex: 1, backgroundColor: Colors.white },
+  container: { flex: 1, backgroundColor: Colors.white },
   content: { alignItems: 'center', paddingHorizontal: 24, paddingTop: 240, paddingBottom: 54 },
   trackingCard: {
     width: '90%',
-    backgroundColor: 'rgba(233, 235, 239, 0.5)',
+    backgroundColor: "#E9EBEF80",
     borderRadius: 16,
     padding: 18,
     marginBottom: 18,
@@ -261,19 +278,21 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     height: 2,
-    backgroundColor: '#c9a25a',
+    backgroundColor: Colors.textPrimary,
   },
   counterBox: {
-    borderRadius: 14,
+    borderRadius: 11.97,
     paddingVertical: 20,
     paddingHorizontal: 16,
     alignItems: 'center',
     marginBottom: 16,
+    borderWidth: 1,
+    borderColor: Colors.white,
   },
   counterBoxTitle: {
     fontFamily: Fonts.body,
     fontSize: 14,
-    color: '#ffffffcc',
+    color: Colors.textPrimary,
     marginBottom: 12,
     letterSpacing: 0.5,
   },
@@ -288,14 +307,14 @@ const styles = StyleSheet.create({
     width: 36,
     height: 36,
     borderRadius: 18,
-    backgroundColor: '#ffffff',
+    backgroundColor: Colors.white,
     alignItems: 'center',
     justifyContent: 'center',
   },
   counterValue: {
     fontFamily: Fonts.heading,
     fontSize: 40,
-    color: '#ffffff',
+    color: Colors.textPrimary,
     minWidth: 60,
     textAlign: 'center',
   },
@@ -303,19 +322,19 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontFamily: Fonts.body,
     fontSize: 13,
-    color: '#ffffffcc',
+    color: Colors.textPrimary,
   },
   errorText: {
     fontFamily: Fonts.body,
     fontSize: 13,
-    color: '#c0392b',
+    color: Colors.error,
     textAlign: 'center',
     marginBottom: 12,
   },
   submitButton: {
-    backgroundColor: '#ffffff',
+    backgroundColor: Colors.white,
     borderWidth: 1.5,
-    borderColor: Colors.gold,
+    borderColor: Colors.textPrimary,
     borderRadius: 10,
     paddingVertical: 12,
     alignItems: 'center',
@@ -324,7 +343,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   submitDisabled: { opacity: 0.5 },
-  submitText: { color: '#c9a25a', fontSize: 14, fontWeight: '700', fontFamily: Fonts.body },
+  submitText: { color: Colors.navy, fontSize: 14, fontWeight: '700', fontFamily: Fonts.body },
   remainingRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -337,7 +356,7 @@ const styles = StyleSheet.create({
   remainingValue: {
     fontFamily: Fonts.heading,
     fontSize: 22,
-    color: '#c9a25a',
+    color: Colors.blue,
     fontWeight: '700',
   },
   backButton: {
@@ -347,14 +366,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 32,
     marginBottom: 8,
   },
-  backButtonText: { color: '#ffffff', fontSize: 13, fontWeight: '600', fontFamily: Fonts.body },
+  backButtonText: { color: Colors.white, fontSize: 13, fontWeight: '600', fontFamily: Fonts.body },
   toast: {
     position: 'absolute',
     top: 44,
     left: 54,
     right: 54,
     zIndex: 100,
-    backgroundColor: '#ffffff',
+    backgroundColor: Colors.white,
     borderRadius: 12,
     paddingVertical: 14,
     paddingHorizontal: 16,

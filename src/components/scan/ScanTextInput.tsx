@@ -1,4 +1,4 @@
-import { Fonts } from '@/constants/theme';
+import { Colors, Fonts } from '@/constants/theme';
 import { forwardRef } from 'react';
 import {
   StyleSheet,
@@ -8,7 +8,7 @@ import {
   ViewStyle,
 } from 'react-native';
 
-const BORDER_COLOR = '#c9a25a';
+const BORDER_COLOR = Colors.textPrimary;
 
 interface ScanTextInputProps extends TextInputProps {
   containerStyle?: ViewStyle;
@@ -20,7 +20,7 @@ const ScanTextInput = forwardRef<TextInput, ScanTextInputProps>(
     {
       containerStyle,
       error,
-      placeholderTextColor = '#9a9a9a',
+      placeholderTextColor = Colors.textSecondary,
       style,
       ...rest
     },
@@ -61,12 +61,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   containerError: {
-    borderColor: '#d64545',
+    borderColor: Colors.error,
   },
   input: {
     height: 52,
     fontSize: 15,
-    color: '#1a1a1a',
+    color: Colors.textPrimary,
     fontFamily: Fonts.body,
   },
 });

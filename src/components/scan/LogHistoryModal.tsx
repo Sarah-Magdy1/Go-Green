@@ -1,4 +1,3 @@
-// components/scan/LogHistoryModal.tsx
 import { Colors, Fonts } from '@/constants/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { ActivityIndicator, Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
@@ -74,7 +73,7 @@ const styles = StyleSheet.create({
   card: {
     width: '85%',
     maxHeight: '70%',
-    backgroundColor: '#ffffff',
+    backgroundColor: '#aa0d0d',
     borderRadius: 12,
     padding: 20,
   },
@@ -82,7 +81,7 @@ const styles = StyleSheet.create({
   roomId: {
     fontFamily: Fonts.heading,
     fontSize: 25,
-    color: Colors.gold,
+    color: Colors.blue,
     textAlign: 'center',
   },
   guestName: {

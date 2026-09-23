@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
   },
   row: { flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 14 },
   rowBorder: { borderBottomWidth: 0.5, borderBottomColor: '#0000001A' },
-  rowLabel: { fontSize: 13, color: '#7a7a7a', fontFamily: Fonts.body },
-  rowValue: { fontSize: 13, fontWeight: '600', color: '#1a1a1a', fontFamily: Fonts.body },
-  rowValueHighlight: { color: '#c9a25a', fontFamily: Fonts.heading, fontSize: 16 },
+  rowLabel: { fontSize: 15, color: Colors.blue, fontFamily: Fonts.body },
+  rowValue: { fontSize: 15, fontWeight: '600', color: Colors.textPrimary, fontFamily: Fonts.body },
+  rowValueHighlight: { color: Colors.blue, fontFamily: Fonts.heading, fontSize: 20 },
 });

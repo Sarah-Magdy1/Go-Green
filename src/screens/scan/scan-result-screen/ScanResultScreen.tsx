@@ -1,5 +1,5 @@
 import MainHeader from '@/components/common/MainHeader';
-import { Fonts } from '@/constants/theme';
+import { Colors, Fonts } from '@/constants/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useState } from 'react';
@@ -36,7 +36,7 @@ export default function ScanRsesultScreen() {
         {isAllowed && (
           <View style={styles.badgeGroup}>
             <View style={styles.badge}>
-              <Ionicons name="checkmark" size={28} color="#ffffff" />
+              <Ionicons name="checkmark" size={28} color={Colors.white} />
             </View>
             <Text style={styles.allowedText}>{t('scan.allowed')}</Text>
             <View style={styles.allowedUnderline} />
@@ -100,8 +100,8 @@ export default function ScanRsesultScreen() {
 }
 
 const styles = StyleSheet.create({
-  safeArea: { flex: 1, backgroundColor: '#ffffff' },
-  container: { flex: 1, backgroundColor: '#ffffff' },
+  safeArea: { flex: 1, backgroundColor: Colors.white  },
+  container: { flex: 1, backgroundColor: Colors.white  },
 
   content: { alignItems: 'center', paddingHorizontal: 24, paddingBottom: 24 },
   contentAllowed: { paddingTop: 270 },
@@ -119,16 +119,17 @@ const styles = StyleSheet.create({
     width: BADGE_SIZE,
     height: BADGE_SIZE,
     borderRadius: BADGE_SIZE / 2,
-    backgroundColor: '#c9a25a',
+    backgroundColor: '#34D399',
     alignItems: 'center',
     justifyContent: 'center',
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     shadowRadius: 4,
+    marginTop: 10,
   },
-  allowedText: { fontSize: 36, color: '#c9a25a', marginTop: 10, fontFamily: Fonts.heading },
-  allowedUnderline: { width: 90, height: 1.2, backgroundColor: '#c9a25a', marginTop: 4 },
+  allowedText: { fontSize: 36, color:Colors.textPrimary , marginTop: 10, fontFamily: Fonts.heading },
+  allowedUnderline: { width: 90, height: 1.2, backgroundColor:Colors.textPrimary , marginTop: 4 },
 
   notAllowedBox: {
     width: 290,
@@ -140,6 +141,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingVertical: 28,
     marginBottom: 20,
+    marginTop: 50,
   },
   iconWrap: {
     width: 64,
@@ -162,7 +164,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 32,
     marginBottom: 24,
   },
-  backButtonText: { color: '#ffffff', fontSize: 13, fontWeight: '600', fontFamily: Fonts.body },
+  backButtonText: { color: Colors.white , fontSize: 13, fontWeight: '600', fontFamily: Fonts.body },
   sectionTitle: {
     fontSize: 19,
     color: '#16233f',
@@ -172,12 +174,11 @@ const styles = StyleSheet.create({
   },
   viewMore: {
     borderWidth: 1,
-    borderColor: '#c9a25a',
     borderRadius: 10,
     paddingVertical: 8,
     width: '100%',
     alignItems: 'center',
     marginTop: 4,
   },
-  viewMoreText: { color: '#c9a25a', fontSize: 13, fontWeight: '600', fontFamily: Fonts.body },
+  viewMoreText: { color: Colors.textPrimary, fontSize: 13, fontWeight: '600', fontFamily: Fonts.body },
 });

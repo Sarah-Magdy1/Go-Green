@@ -1,6 +1,8 @@
 import { Ionicons } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
-import { Colors, Fonts } from '../../constants/theme';
+import { Colors, Fonts, gradients } from '../../constants/theme';
+import GradientIcon from '../common/GradientIcon';
 
 interface AuthInputProps {
   label: string;
@@ -32,15 +34,17 @@ export default function AuthInput({
           secureTextEntry={secureTextEntry}
           style={[styles.input, isRTL && styles.inputRTL]}
         />
-        <Ionicons name={icon} size={18} color={Colors.gold} />
+        <GradientIcon name={icon} size={18} />
       </View>
 
       <View style={[styles.underlineRow, isRTL && styles.underlineRowRTL]}>
-        <View style={styles.dot} />
-        <View style={styles.underline} />
+        <LinearGradient colors={gradients.background} style={styles.dot} />
+        <LinearGradient colors={gradients.background} style={styles.underline} />
       </View>
 
-      {!!error && <Text style={[styles.error, isRTL && styles.errorRTL]}>{error}</Text>}
+      {!!error ? (
+        <Text style={[styles.error, isRTL && styles.errorRTL]}>{error}</Text>
+      ) : null}
     </View>
   );
 }
@@ -49,7 +53,13 @@ const styles = StyleSheet.create({
   container: { marginBottom: 20 },
   row: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   rowRTL: { flexDirection: 'row-reverse' },
-  input: { flex: 1, fontSize: 14, color: Colors.textPrimary, paddingVertical: 6, fontFamily: Fonts.body },
+  input: {
+    flex: 1,
+    fontSize: 14,
+    color: Colors.textPrimary,
+    paddingVertical: 6,
+    fontFamily: Fonts.body,
+  },
   inputRTL: { textAlign: 'right' },
   underlineRow: {
     flexDirection: 'row',
@@ -63,9 +73,16 @@ const styles = StyleSheet.create({
     width: 5,
     height: 5,
     borderRadius: 2.5,
-    backgroundColor: Colors.gold,
   },
-  underline: { flex: 1, height: 1, backgroundColor: Colors.gold },
-  error: { color: Colors.error, fontSize: 12, marginTop: 4, fontFamily: Fonts.body },
+  underline: {
+    flex: 1,
+    height: 1,
+  },
+  error: {
+    color: Colors.error,
+    fontSize: 12,
+    marginTop: 4,
+    fontFamily: Fonts.body,
+  },
   errorRTL: { textAlign: 'right' },
 });

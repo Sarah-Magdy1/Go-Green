@@ -1,12 +1,20 @@
 export const Colors = {
   navy: '#16233f',
-  gold: '#B6914C',
+  gold: '#6691D3',
+  blue:'#6691D3',
   white: '#ffffff',
-  textPrimary: '#0A0A0A',
+  textPrimary: '#131E30',
   textSecondary: '#717182',
-  border: '#c9a25a',
+  border: '#D4EEFF',
   error: '#c0392b',
+  button: '#D4EEFF',
+  
 };
+export const gradients = {
+  background: ["#03388A" , "#07BCA2" ],
+  banner:["#E9F5FD" , "#EDE9FE" ],
+  counterBox:["#E9F2FD" , "#6691D3"]
+} as const;
 
 export const Fonts = {
   heading: 'PlayfairDisplay_700Bold',
